@@ -3,17 +3,17 @@ use Core\Lang;
 ?>
 
 
-<h1>User profile</h1>
+<h1><?=Lang::translate('User profile')?></h1>
 
         <div class="mb-3"></div>
 
 
-        <b> First name </b> : <?=$userdata['firstname'] ?> <br>
-        <b> Last name </b> : <?=$userdata['lastname'] ?> <br>
-        <b> Email </b> : <?=$userdata['email'] ?> <br>
-        <b> About me </b> : <?=$userdata['description'] ?> <br>
-        <b> Profile image </b> : <img width='64px' src='/img/<?=$userdata['image'] ?>' ><br>
-        <b> Profile created </b> : <?=$userdata['created_at'] ?> <br>
+        <b> <?=Lang::translate('First name')?> </b> : <?=$userdata['firstname'] ?> <br>
+        <b> <?=Lang::translate('Last name')?> </b> : <?=$userdata['lastname'] ?> <br>
+        <b> <?=Lang::translate('Email')?></b> : <?=$userdata['email'] ?> <br>
+        <b> <?=Lang::translate('About me')?> </b> : <?=$userdata['description'] ?> <br>
+        <b> <?=Lang::translate('Profile image')?> </b> : <img width='64px' src='/img/<?=$userdata['image'] ?>' ><br>
+        <b> <?=Lang::translate('Profile created')?></b> : <?=$userdata['created_at'] ?> <br>
 
 
         <div class="mb-3"></div>

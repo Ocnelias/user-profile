@@ -8,8 +8,10 @@ use Core\Lang;
 
         <?php if ($validation_errors && !empty($validation_errors)){ ?>
 
-            You have made some validation errors while completing this form
-            Please check and fix them: <br>
+
+            <?=Lang::translate('validation_text')?>:
+
+            <br>
 
             <?php foreach ($validation_errors as $error) { ?>
 
@@ -25,39 +27,39 @@ use Core\Lang;
           <form action="<?php echo $this->basePath; ?>user/add" method="POST" enctype="multipart/form-data">
 
               <div class="mb-3">
-              <label for="username">Username</label>
+              <label for="username"><?=Lang::translate('Username')?></label>
               <div class="input-group">
-                <input tooltipText="Type in your username in this box. At least 6 symbols" type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                <input tooltipText="<?=Lang::translate('Type in your username in this box. At least 6 symbol')?>s" type="text" class="form-control" id="username" name="username" placeholder="<?=Lang::translate('Username')?>" required>
                 <div class="invalid-feedback" style="width: 100%;"></div>
               </div>
             </div>
 
             <div class="mb-3">
-              <label for="email">Email <span class="text-muted"></span></label>
-              <input type="email" tooltipText="Type your valid email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+              <label for="email"><?=Lang::translate('Email')?> <span class="text-muted"></span></label>
+              <input type="email" tooltipText="<?=Lang::translate('Type your valid email')?>" class="form-control" id="email" name="email" placeholder="you@example.com" required>
               <div class="invalid-feedback"></div>
             </div>
               
               
              <div class="mb-3">
-              <label for="password">Password <span class="text-muted"></span></label>
-              <input type="password" tooltipText="Create access password. Password should contain both letter and numbers. At least 6 symbols"  class="form-control" id="password" name="password"  required>
+              <label for="password"><?=Lang::translate('Password')?> <span class="text-muted"></span></label>
+              <input type="password" tooltipText="<?=Lang::translate('Create access password. Password should contain both letter and numbers. At least 6 symbols')?>"  class="form-control" id="password" name="password"  required>
               <div class="invalid-feedback"></div>
              </div>
 
               <div class="mb-3">
-                  <label for="firstname">First name</label>
+                  <label for="firstname"><?=Lang::translate('First name')?></label>
                   <div class="input-group">
-                      <input type="text" tooltipText="Type in your first name in this box. At least 3 symbols"class="form-control" id="firstname" name="firstname" placeholder="first name" required>
+                      <input type="text" tooltipText="<?=Lang::translate('Type in your first name in this box. At least 3 symbols')?>"class="form-control" id="firstname" name="firstname" placeholder="<?=Lang::translate('First name')?>" required>
                       <div class="invalid-feedback" style="width: 100%;"></div>
                   </div>
               </div>
 
 
               <div class="mb-3">
-                  <label for="lastname">Last name</label>
+                  <label for="lastname"><?=Lang::translate('Last name')?></label>
                   <div class="input-group">
-                      <input type="text" tooltipText="Type in your last name in this box. At least 3 symbols" class="form-control" id="lastname" name="lastname" placeholder="last name" required>
+                      <input type="text" tooltipText="<?=Lang::translate('Type in your last name in this box. At least 3 symbols')?>"class="form-control" id="lastname" name="lastname" placeholder="<?=Lang::translate('Last name')?>" required>
                       <div class="invalid-feedback" style="width: 100%;"></div>
                   </div>
               </div>
@@ -65,17 +67,17 @@ use Core\Lang;
               
 
             <div class="mb-3">
-              <label for="description">About me</label>
-              <textarea tooltipText="Write about youself" class="form-control" id="description" name="description" required></textarea>
+              <label for="description"><?=Lang::translate('About me')?></label>
+              <textarea tooltipText="<?=Lang::translate('Write about youself')?>" class="form-control" id="description" name="description" required></textarea>
               <div class="invalid-feedback"></div>
             </div>
 
             <div class="mb-3">
-              <label for="image">Profile image</label>
-              <input type="file" tooltipText="Choose your profile image" class="form-control" id="image" name="image">
+              <label for="image"><?=Lang::translate('Profile image')?></label>
+              <input type="file" tooltipText="<?=Lang::translate('Choose your profile image')?>" required class="form-control" id="image" name="image">
             </div>
 
-            <button class="btn btn-primary" type="submit" name="submit_add_user" value="Submit" >Sign up!</button>
+            <button class="btn btn-primary" type="submit" name="submit_add_user" value="Submit" ><?=Lang::translate('Sign up')?>!</button>
           </form>
         </div>
 

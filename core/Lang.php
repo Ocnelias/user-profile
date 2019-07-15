@@ -15,6 +15,7 @@ class Lang
 
     public static function translate($string){
 
+
         $langpath = '../language/'.self::currentLanguage().'.php';
 
 
@@ -22,9 +23,9 @@ class Lang
             return $string;
 
         } else {
-            require_once ($langpath);
-            return $translations[$string] ?? $string;
+            require ($langpath);
 
+            return array_key_exists($string,$translations) ? $translations[$string] : $string;
 
         }
 
