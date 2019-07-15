@@ -75,12 +75,18 @@ class User extends UserEntity
     public function validate(array $data)
     {
 
+        $check_user_sql= "SELECT id FROM user WHERE username = :username LIMIT 1";
+        $query = $this->db->prepare($check_user_sql);
+        $query->execute(array(
+            ':username'    => $data['username'],
+        ));
 
 
          $errors_list=[];
 
          if (strlen(trim($data['username']))<6)  $errors_list[]='username to short';
          if (strlen(trim($data['username']))>30) $errors_list[]='username to long';
+         if ($query->rowcount()) $errors_list[]='user with this username already exists';
          if (strlen(trim($data['firstname']))<3) $errors_list[]='first name to short';
          if (strlen(trim($data['firstname']))>30) $errors_list[]='first name to long';
          if (strlen(trim($data['lastname']))<3) $errors_list[]='last name to short';
