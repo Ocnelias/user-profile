@@ -1,0 +1,22 @@
+{
+    "name": "userprofile/",
+    "description": "User registration/login system",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Dmytry Salenko",
+            "email": "dosalenko@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Core\\" : "core/",
+            "Application\\" : "module/Application/",
+            "Authorize\\" : "module/Authorize/",
+            "User\\" : "module/User/"
+        }
+    }
+}

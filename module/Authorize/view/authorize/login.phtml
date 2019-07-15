@@ -1,0 +1,23 @@
+﻿    <h1>User login</h1>
+
+    <div class="col-md-8 order-md-1">
+      <h1 class="mb-3"></h1>
+<?php if (isset($errorMessage) && $errorMessage) { ?>
+      <div class="alert alert-danger" role="alert">
+<?php echo $errorMessage; ?>
+      </div>
+<?php } ?>
+      <form action="<?php echo $this->basePath; ?>authorize/login" method="POST">
+        <div class="mb-3">
+          <label for="login">Username</label>
+          <input type="text" id="username" name="username" class="form-control" placeholder="username" required autofocus>
+       </div>
+
+       <div class="mb-3">
+         <label for="password">Password</label>
+         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+       </div>
+
+       <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="submit" >Login</button>
+      </form>
+    </div>

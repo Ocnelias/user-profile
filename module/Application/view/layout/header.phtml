@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><?php echo $this->config['project_name']; ?></title>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/bootstrap.min.css"/>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <div class="container">
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+       <ul class="navbar-nav mr-auto">
+
+           <?php if (isset($this->isAuthorize) && $this->isAuthorize) { ?>
+        <li class="nav-item">
+         <a class="nav-link" href="<?php echo $this->basePath; ?>/user/profile">My profile</a>
+        </li>
+           <?php } else { ?>
+        <li class="nav-item">
+         <a class="nav-link" href="<?php echo $this->basePath; ?>user/add">Registration</a>
+        </li>
+           <?php } ?>
+
+
+       </ul>
+       <ul class="navbar-nav mr-right">
+        <li class="nav-item">
+        <?php if (isset($this->isAuthorize) && $this->isAuthorize) { ?>
+         <a class="nav-link" href="<?php echo $this->basePath; ?>authorize/logout">Logout</a>
+        <?php } else { ?>
+         <a class="nav-link" href="<?php echo $this->basePath; ?>authorize">Login</a>
+        <?php } ?>
+        </li>
+
+           </li>
+           <select class='form-control' name='lang' onChange="top.location.href='/application/lang?lang='+this.options[this.selectedIndex].value;">
+               <option value='en'>en</option>
+               <option value='de' <?=$_SESSION['lang']=='de'? 'selected':''?>>de</option>
+               <option value='fr' <?=$_SESSION['lang']=='fr'? 'selected':''?>>fr</option>
+           </select>
+           </li>
+       </ul>
+      </div>
+     </div>
+    </nav>
+
+    <div class="container">
+      <div class="starter-template">
