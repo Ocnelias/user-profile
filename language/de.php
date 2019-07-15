@@ -3,7 +3,7 @@ $translations= [
 
     'User registration'=>'Benutzerregistrierung',
     '404 Not Found'=>'404 nicht gefunden',
-    'My profile'=>'Profil',
+    'My profile'=>' Profil',
     'Registration'=>'Registration',
     'Logout'=>'Logout',
     'Login'=>'Login',

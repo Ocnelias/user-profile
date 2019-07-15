@@ -1,7 +1,7 @@
 <?php
 $translations= [
 
-    'User registration'=>'User registration',
+    'User registration'=>'Enregistrement de l\'utilisateur',
     '404 Not Found'=>'404 Not Found',
     'My profile'=>'My profile',
     'Registration'=>'Registration',
